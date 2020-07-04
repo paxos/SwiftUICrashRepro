@@ -17,7 +17,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView()
+        
+        let section1 = MySection(title: "section 1", rows: [MyRow(title: "Row1.1")])
+        let section2 = MySection(title: "section 2", rows: [MyRow(title: "Row2.1")])
+        
+        let contentView = ContentView(sections: [section1, section2])
 
         // Create the window and set the content view. 
         window = NSWindow(

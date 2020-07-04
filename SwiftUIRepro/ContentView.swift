@@ -34,7 +34,13 @@ struct ContentView: View {
                 }
             }
             Button(action: {
-                self.sections = self.sections.reversed()
+                let a = Array(self.sections.reversed())
+                self.sections = []
+                   DispatchQueue.main.async {
+                    self.sections = a
+                }
+                
+//
             }) { Text("Shuffle stuff and crash")}
         }
         .frame(width: 800, height: 800)
